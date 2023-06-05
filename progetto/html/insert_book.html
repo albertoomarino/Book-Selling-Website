@@ -1,0 +1,92 @@
+<!-- Codice relativo alla sezione per l'inserimento di un prodotto da parte dell'ADMIN -->
+
+<section class="insert_book">
+    <form id="insert_book_form">
+        <div class="main_box">
+            <h1 class="heading">Make a new product available on the store website</h1>
+
+            <p class="new_book_input">
+                Enter the <span>title</span> of the book:
+            </p>
+
+            <!-- Form per il titolo del libro -->
+            <div class="input_box">
+                <input type="text"
+                       id="title"
+                       name="title"
+                       pattern="^(?!.*\s)\w[\w\u00C0-\u017F,.']{0,59}$"
+                       title="Respect the format! Use only alphanumeric characters, numbers, and spaces up to 60 characters"
+                       maxlength="60"
+                       placeholder="ex. Un gran voglia di vivere"
+                       required="required">
+            </div>
+
+            <p class="new_book_input">
+                Enter the <span>author(s)</span> of the new book:
+            </p>
+
+            <!-- Form per l'autore del libro -->
+            <div class="input_box">
+                <input type="text"
+                       id="author"
+                       name="author"
+                       pattern="^(?!.*\s)[A-Za-z]+(?:\s*[A-Za-z]+)*(?:,\s*[A-Za-z]+(?:\s*[A-Za-z]+)*)*$"
+                       title="Respect the format! Use letters only and divide authors with a comma followed by a space for up to 60 characters"
+                       maxlength="60"
+                       placeholder="ex. Fabio Volo"
+                       required="required">
+            </div>
+
+            <p class="new_book_input">
+                Enter the <span>price</span> of the book:
+            </p>
+
+            <!-- Form per il prezzo del libro -->
+            <div class="input_box">
+                <input type="text"
+                       id="price"
+                       name="price"
+                       pattern="^(?!.*\s)(?=.*\d)\d{1,29}(\.\d{2})?$"
+                       title="Respect the format! 'whole part.decimal part' (with decimal part of up to 2 digits) for up to 32 characters"
+                       maxlength="32"
+                       placeholder="ex. 18.05"
+                       required="required">
+            </div>
+
+            <p class="new_book_input">
+                Enter the <span>publisher</span> of the book:
+            </p>
+
+            <!-- Form per l'editore del libro -->
+            <div class="input_box">
+                <input type="text"
+                       id="publisher"
+                       name="publisher"
+                       pattern="^(?!.*\s)[\w&]+(?:\s*[\w&]+)*$"
+                       title="Respect the format! Use only letters (lowercase or uppercase) for up to 60 characters"
+                       maxlength="60"
+                       placeholder="ex. Mondadori"
+                       required="required">
+            </div>
+
+            <p class="new_book_input">
+                Enter the <span>plot</span> of the book:
+            </p>
+
+            <!-- Form per la trama del libro -->
+            <div class="input_box">
+                <textarea id="plot"
+                          name="plot"
+                          rows="10"
+                          maxlength="900"
+                          placeholder="ex. The story is told by an internal narrator, Marco, who tells his seven-year love story with Anna through dialogues. From the relationship between the two protagonists Matteo was born, who at the time of the crisis between his parents was five years old."
+                          required="required"></textarea>
+            </div>
+
+            <!-- Bottone per l'aggiunta di un prodotto sulla piattaforma -->
+            <div class="new_book_input_price">
+                <button type="submit" class="form_btn">Add this new book</button>
+            </div>
+        </div>
+    </form>
+</section>

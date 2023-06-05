@@ -1,0 +1,37 @@
+<!-- Codice relativo alla sezione per l'inserimento della recensione di un prodotto -->
+
+<section class="insert_review">
+    <form id="insert_review_form">
+        <div class="main_box">
+            <h1 class="heading">Write a new review</h1>
+
+            <p class="new_book_input">
+                Choose the <span>title of the book</span> you want to review:
+            </p>
+
+            <!-- Form per la scelta del libro da recensire -->
+            <select class="select_remove" name="select_remove" id="select_remove">
+                <option value="chooseBook" disabled selected>Choose a title:</option>
+            </select>
+
+            <p class="new_book_input">
+                Enter your <span>review</span>:
+            </p>
+
+            <!-- Form per la recensione del libro -->
+            <div class="input_box">
+                <textarea id="text"
+                          name="text"
+                          rows="10"
+                          maxlength="900"
+                          placeholder="ex. Books that are worth reading at least once in a lifetime do not necessarily belong to the category of great classics. Very often I hear these volumes criticized but, as far as I'm concerned, I like to read even some light narration from time to time. This book has given me a lot of humanity, it's a story that speaks to the heart."
+                          required="required"></textarea>
+            </div>
+
+            <!-- Bottone per l'aggiunta di una recensione di un prodotto sulla piattaforma -->
+            <div class="new_review_input">
+                <button type="submit" class="form_btn">Add this new review</button>
+            </div>
+        </div>
+    </form>
+</section>
