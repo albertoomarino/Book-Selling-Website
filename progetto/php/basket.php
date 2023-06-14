@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione della sezione "Basket"
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
@@ -8,7 +17,6 @@ if (isset($_SESSION, $_SESSION["name"], $_SESSION["surname"], $_SESSION["usernam
     include "../html/top.html";
     include "navbar.php"; ?>
     <section class="basket">
-        <!-- Box dell'intera schermata del prodotto -->
         <div class="main_box">
             <h1 class="heading"><?= $_SESSION["name"] ?>, this is your shopping basket</h1>
             <!-- Bottone per che rimanda alla pagina per la rimozione di un prodotto dal carrello -->
@@ -29,5 +37,6 @@ if (isset($_SESSION, $_SESSION["name"], $_SESSION["surname"], $_SESSION["usernam
     <?php
     include "../html/footer.html";
 } else {
+    // Utente non autorizzato
     header("Location: login.php");
 }

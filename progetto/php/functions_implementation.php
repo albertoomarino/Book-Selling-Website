@@ -1,11 +1,20 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione di tutte le funzioni php
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
 }
 
 /**
- * Funzione per la registrazione di un nuovo utente alla piattaforma.
+ * Funzione che permette ad un utente di registrarsi alla piattaforma.
  * Eseguibile da: tutti gli utenti
  *
  * @return void
@@ -24,28 +33,24 @@ function user_subscribe()
             $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
             $emailValidated = filter_var($email, FILTER_VALIDATE_EMAIL);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-
             // Se i seguenti campi sono vuoti, si torna alla pagina di registrazione
             if (empty($name) || empty($surname) || empty($username) || empty($email) || empty($emailValidated) || empty($password)) {
                 header("Location: subscribe.php");
             }
-
             // Codifica dei valori per poterli usare in una query
             $name = $db->quote($_POST["name"]);
             $surname = $db->quote($_POST["surname"]);
             $username = $db->quote($_POST["username"]);
             $email = $db->quote($_POST["email"]);
-            $password = $db->quote(md5($_POST["password"])); /* "md5() calcola l'hash MD5 di una stringa */
-
+            $password = $db->quote(md5($_POST["password"])); // "md5() calcola l'hash MD5 di una stringa
             // Verifica della presenza dell'utente nel database
-            $result = $db->query("SELECT username FROM users WHERE username=$username");
-
-            if ($result != null && $result->rowCount() == 1) {
-                // Un utente con l'username inserito è già registrato
+            $query = $db->query("SELECT username FROM users WHERE username=$username");
+            if ($query != null && $query->rowCount() == 1) {
+                // Fallimento: un utente con l'username inserito è già registrato
                 echo "0";
                 $_SESSION["advise"] = "A user with the entered username is already registered! Choose another different one!";
             } else {
-                // Il nuovo utente è stato creato correttamente
+                // Successo: il nuovo utente è stato creato correttamente
                 $db->query("INSERT INTO users (username, name, surname, email, password, role) VALUES ($username, $name, $surname, $email, $password, 'user')");
                 $_SESSION["name"] = $_POST["name"];
                 $_SESSION["surname"] = $_POST["surname"];
@@ -57,15 +62,17 @@ function user_subscribe()
             }
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: subscribe.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: subscribe.php");
     }
 }
 
 /**
- * Funzione per l'accesso di un utente alla piattaforma.
+ * Funzione che permette ad un utente di accedere alla piattaforma.
  * Eseguibile da: tutti gli utenti
  *
  * @return void
@@ -80,22 +87,18 @@ function user_login()
             // Sanitizzazione dell'input per eliminare o neutralizzare i caratteri indesiderati all'interno di una stringa
             $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-
-            // Se i seguenti campi sono vuoti, si torna alla pagina di registrazione
+            // Se i seguenti campi sono vuoti, si torna alla pagina di login
             if (empty($username) || empty($password)) {
                 header("Location: login.php");
             }
-
             // Codifica dei valori per poterli usare in una query
             $username = $db->quote($_POST["username"]);
             $password = $db->quote(md5($_POST["password"])); // "md5() calcola l'hash MD5 di una stringa
-
             // Verifica della presenza dell'utente nel database
-            $result = $db->query("SELECT * FROM users WHERE username=$username AND password=$password");
-
-            if ($result != null && $result->rowCount() == 1) {
-                // L'utente con l'username inserito è stato trovato
-                $logResult = $result->fetch(); // Uso "fetch()" per recuperare i risultati di una query
+            $query = $db->query("SELECT * FROM users WHERE username=$username AND password=$password");
+            if ($query != null && $query->rowCount() == 1) {
+                // Successo: l'utente con l'username inserito è stato trovato
+                $logResult = $query->fetch(); // Uso "fetch()" per recuperare i risultati di una query
                 $_SESSION["name"] = $logResult["name"];
                 $_SESSION["surname"] = $logResult["surname"];
                 $_SESSION["username"] = $logResult["username"];
@@ -105,14 +108,16 @@ function user_login()
                 echo "1";
                 return;
             }
-            // L'utente con l'username inserito non è stato trovato
+            // Fallimento: l'utente con l'username inserito non è stato trovato
             echo "0";
             $_SESSION["advise"] = "The user with the username entered was not found or the password is incorrect. Try again!";
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -146,9 +151,11 @@ function show_uploaded_book()
             echo json_encode($json);
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -172,12 +179,10 @@ function upload_book()
             $publisher = filter_input(INPUT_POST, "publisher", FILTER_SANITIZE_STRING);
             $plot = filter_input(INPUT_POST, "plot", FILTER_SANITIZE_STRING);
             $price = filter_input(INPUT_POST, "price", FILTER_SANITIZE_NUMBER_FLOAT);
-
-            // Se i seguenti campi sono vuoti, si torna alla pagina di registrazione
+            // Se i seguenti campi sono vuoti, si torna alla pagina di login
             if (empty($title) || empty($author) || empty($publisher) || empty($plot) || empty($price)) {
                 header("Location: login.php");
             }
-
             // Codifica dei valori per poterli usare in una query
             $title = $db->quote($_POST["title"]);
             $author = $db->quote($_POST["author"]);
@@ -185,54 +190,57 @@ function upload_book()
             $publisher = $db->quote($_POST["publisher"]);
             $plot = $db->quote($_POST["plot"]);
             $image = "../imgBooks/" . $title . ".jpg";
-
             // Rimuovi la prima occorrenza di '
             $image = preg_replace("/'/", "", $image, 1);
             // Rimuovi l'ultima occorrenza di '
             $image = strrev(preg_replace("/'/", "", strrev($image), 1));
-
             $image = $db->quote($image);
-            $result = $db->query("SELECT title FROM products WHERE title=$title");
-            if ($result != null && $result->rowCount() > 0) {
-                // Il prodotto è già presente
+            // Verifica la presenza del libro nel database
+            $query = $db->query("SELECT title FROM products WHERE title=$title");
+            if ($query != null && $query->rowCount() > 0) {
+                // Fallimento: il prodotto è già presente
                 echo "0";
             } else {
+                // Successo: il prodotto è stato inserito correttamente
                 $db->query("INSERT INTO products (title, author, price, publisher, plot, image) VALUES ($title, $author, $price, $publisher, $plot, $image)");
-                // Il prodotto è stato inserito correttamente
                 echo "1";
             }
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che selezione i titoli dei prodotti in vendita sulla piattaforma che sono
- * disponibili per la rimozione.
+ * Funzione che seleziona i titoli dei prodotti in vendita che sono disponibili per la rimozione
+ * da parte dell’admin e i titoli dei prodotti che possono essere recensiti dagli utenti.
  * Eseguibile da: ADMIN
  *
  * @return void
  */
-function show_removed_book()
+function show_select_titles()
 {
-    if (isset($_SESSION["username"], $_SESSION["role"]) && $_SESSION["role"]) {
+    if (isset($_SESSION["username"])) {
         try {
             // Connessione al database
             $db = db_connection();
 
-            $result = $db->query("SELECT title FROM products");
+            $query = $db->query("SELECT title FROM products");
             // Imposta l'intestazione della risposta che indica che i dati restituiti sono nel formato JSON
             header("Content-type: application/json");
             // Codifica e stampa i risultati della query in formato JSON
-            echo json_encode($result->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
+            echo json_encode($query->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -250,28 +258,29 @@ function remove_book()
             // Connessione al database
             $db = db_connection();
 
-            $title = $_POST["select_remove"]; /* Prende il valore dalla select */
+            $title = $_POST["select_remove"]; // Prende il valore dalla select
             // Sanitizzazione dell'input per eliminare o neutralizzare i caratteri indesiderati all'interno di una stringa
             $title = filter_var($title, FILTER_SANITIZE_STRING);
-
-            $result = $db->query("DELETE FROM products WHERE title = '$title'");
-            if ($result !== false) {
-                // Il prodotto è stato rimosso correttamente
-                echo "0";
-            } else {
+            $query = $db->query("DELETE FROM products WHERE title = '$title'");
+            if ($query !== false) {
+                // Successo: il prodotto è stato rimosso correttamente
                 echo "1";
+            } else {
+                // Fallimento: il prodotto non è stato rimosso correttamente
+                echo "0";
             }
         } catch (PDOException $ex) {
+            // Errore nella connessione al database
             header("Location: login.php");
         }
     } else {
-        // Utente non autorizzato, reindirizza alla pagina di login
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che visualizza la descrizione dei prodotti presenti sulla piattaforma.
+ * Funzione che mostra la descrizione dei prodotti presenti sulla piattaforma.
  * Eseguibile da: tutti gli utenti
  *
  * @return void
@@ -283,6 +292,7 @@ function show_description_book()
             // Connessione al database
             $db = db_connection();
 
+            // Inizializzazione di un array per la memorizzazione dei risultati della query
             $json = array();
             $query = $db->query("SELECT * FROM products");
             /* Se la query ha restituito risultati (ossia il numero di righe restituito dalla query
@@ -292,19 +302,22 @@ function show_description_book()
                     $json[] = $row;
                 }
             }
+            // Imposta l'intestazione della risposta che indica che i dati restituiti sono nel formato JSON
             header("Content-type: application/json");
             echo json_encode($json);
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che visualizza i prodotti presenti nel carrello.
+ * Funzione che mostra i prodotti presenti nel carrello.
  * Eseguibile da: tutti gli utenti
  *
  * @return void
@@ -320,7 +333,7 @@ function show_basket()
             $json = array();
             // Codifica dei valori per poterli usare in una query
             $username = $db->quote($_SESSION["username"]);
-
+            // Seleziona tutte le colonne della tabella "products" per i prodotti che sono presenti nel carrello di un determinato utente
             $query = $db->query("SELECT p.* FROM (cart c JOIN users u ON c.username=u.username) JOIN products p on p.title=c.title WHERE c.username=$username");
             /* Se la query ha restituito risultati (ossia il numero di righe restituito dalla query
              * è maggiore di 0), itera sui risultati e li aggiunge all'array $json */
@@ -335,9 +348,11 @@ function show_basket()
             echo json_encode($json);
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -359,22 +374,23 @@ function upload_to_basket()
             $username = $db->quote($_SESSION["username"]);
             // Titolo del libro che arriva come informazione inviata da AJAX
             $title = $db->quote($_POST["title"]);
-
             // Verifica se il prodotto è già presente nel carrello dell'utente
-            $result = $db->query("SELECT * FROM cart WHERE username = $username AND title = $title");
+            $query = $db->query("SELECT * FROM cart WHERE username = $username AND title = $title");
 
-            if ($result != null && $result->rowCount() > 0) {
-                // Prodotto già presente nel carrello
+            if ($query != null && $query->rowCount() > 0) {
+                // Fallimento: il prodotto è già presente nel carrello
                 echo "0";
             } else {
-                // Inserimento nel carrello
+                // Successo: il prodotto è stato inserito correttamente nel carrello
                 $db->query("INSERT INTO cart (username, title) VALUES ($username, $title)");
                 echo "1";
             }
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -394,15 +410,17 @@ function show_removed_book_from_basket()
             $db = db_connection();
 
             $username = $_SESSION["username"];
-            $result = $db->query("SELECT title FROM cart WHERE username = '$username'");
+            $query = $db->query("SELECT title FROM cart WHERE username = '$username'");
             // Imposta l'intestazione della risposta che indica che i dati restituiti sono nel formato JSON
             header("Content-type: application/json");
             // Codifica e stampa i risultati della query in formato JSON
-            echo json_encode($result->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
+            echo json_encode($query->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -424,19 +442,20 @@ function remove_book_from_basket()
             $title = $_POST["select_remove_from_basket"]; // Prende il valore dalla select
             // Sanitizzazione dell'input per eliminare o neutralizzare i caratteri indesiderati all'interno di una stringa
             $title = filter_var($title, FILTER_SANITIZE_STRING);
-
-            $result = $db->query("DELETE FROM cart WHERE username = '$username' AND title = '$title'");
-            if ($result !== false) {
-                // Il prodotto è stato rimosso correttamente
-                echo "0";
-            } else {
+            $query = $db->query("DELETE FROM cart WHERE username = '$username' AND title = '$title'");
+            if ($query !== false) {
+                // Successo: il prodotto è stato rimosso correttamente
                 echo "1";
+            } else {
+                // Fallimento: il prodotto non è stato rimosso correttamente
+                echo "0";
             }
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
-        // Utente non autorizzato, reindirizza alla pagina di login
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -455,24 +474,27 @@ function complete_order()
 
             // Codifica dei valori per poterli usare in una query
             $username = $db->quote($_SESSION["username"]);
-            $result = $db->query("DELETE FROM cart WHERE username=$username");
-            if ($result !== false) {
-                // Elementi rimossi dal carrello!
+            $query = $db->query("DELETE FROM cart WHERE username=$username");
+            if ($query !== false) {
+                // Successo: gli elementi sono stati rimossi correttamente dal carrello
                 echo "1";
             } else {
+                // Fallimento: gli elementi non sono stati rimossi correttamente dal carrello
                 echo "0";
             }
             return 1;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che visualizza i prodotti presenti nella sezione "Reviews".
+ * Funzione che mostra le recensioni effettuate dagli utenti.
  * Eseguibile da: tutti gli utenti
  *
  * @return void
@@ -486,7 +508,6 @@ function show_reviews()
 
             // Inizializzazione di un array per la memorizzazione dei risultati della query
             $json = array();
-
             $query = $db->query("SELECT * FROM reviews");
             /* Se la query ha restituito risultati (ossia il numero di righe restituito dalla query
              * è maggiore di 0), itera sui risultati e li aggiunge all'array $json */
@@ -501,9 +522,11 @@ function show_reviews()
             echo json_encode($json);
             return;
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
@@ -516,7 +539,7 @@ function show_reviews()
  */
 function upload_review()
 {
-    if (isset($_SESSION["username"], $_SESSION["role"], $_POST["select_remove"], $_POST["text"])) {
+    if (isset($_SESSION["username"], $_POST["select_remove"], $_POST["text"])) {
         try {
             // Connessione al database
             $db = db_connection();
@@ -524,38 +547,36 @@ function upload_review()
             $username = $_SESSION["username"];
             $title = $_POST["select_remove"];
             $text = $_POST["text"];
-
-            // Se i seguenti campi sono vuoti, si torna alla pagina di registrazione
+            // Se i seguenti campi sono vuoti, si torna alla pagina di login
             if (empty($username) || empty($title) || empty($text)) {
                 header("Location: login.php");
                 return;
             }
-
             // Codifica dei valori per poterli usare in una query
             $username = $db->quote($username);
             $title = $db->quote($title);
             $text = $db->quote($text);
-
-            $result = $db->query("SELECT username, title FROM reviews WHERE username=$username AND title=$title");
-
-            if ($result != null && $result->rowCount() > 0) {
-                // La recensione dell'utente su un determinato libro è già presente
+            $query = $db->query("SELECT username, title FROM reviews WHERE username=$username AND title=$title");
+            if ($query != null && $query->rowCount() > 0) {
+                // Fallimento: la recensione dell'utente su un determinato libro è già presente
                 echo "0";
             } else {
                 $db->query("INSERT INTO reviews (username, title, text) VALUES ($username, $title, $text)");
-                // La recensione è stata inserita correttamente
+                // Successo: la recensione è stata inserita correttamente
                 echo "1";
             }
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che rimuove un prodotto dalla piattaforma.
+ * Funzione che rimuove una recensione dalla piattaforma.
  * Eseguibile da: ADMIN
  *
  * @return void
@@ -567,44 +588,37 @@ function remove_review()
             // Connessione al database
             $db = db_connection();
 
-            $review_option = $_POST["select_remove_review"]; // Prende il valore dalla select
+            $select_element = $_POST["select_remove_review"]; // Prende il valore dalla select
             // Sanitizzazione dell'input per eliminare o neutralizzare i caratteri indesiderati all'interno di una stringa
-            $review_option = filter_var($review_option, FILTER_SANITIZE_STRING);
-
+            $select_element = filter_var($select_element, FILTER_SANITIZE_STRING);
             // Separo l'username e il titolo dalla stringa ricevuta
             $username = "";
             $title = "";
-            $parts = explode(", ", $review_option);
+            $parts = explode(", ", $select_element);
             if (count($parts) === 2) {
                 $username = $parts[0];
                 $title = $parts[1];
             }
-
-            // Query per eliminare la recensione
-            $deleteQuery = "DELETE FROM reviews WHERE username = :username AND title = :title";
-            $deleteStmt = $db->prepare($deleteQuery);
-            $deleteStmt->bindParam(":username", $username);
-            $deleteStmt->bindParam(":title", $title);
-            $deleteResult = $deleteStmt->execute();
-
-            if ($deleteResult !== false) {
-                // La recensione è stata rimossa correttamente
-                echo "0";
-            } else {
+            $query = $db->query("DELETE FROM reviews WHERE username = '$username' AND title = '$title'");
+            if ($query !== false) {
+                // Successo: la recensione è stata rimossa correttamente
                 echo "1";
+            } else {
+                // Fallimento: la recensione non è stata rimossa correttamente
+                echo "0";
             }
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
-        // Utente non autorizzato, reindirizza alla pagina di login
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }
 
 /**
- * Funzione che seleziona i titoli dei prodotti in vendita sulla piattaforma che sono
- * disponibili per la rimozione.
+ * Funzione che seleziona le recensioni disponibili per la rimozione.
  * Eseguibile da: ADMIN
  *
  * @return void
@@ -616,15 +630,17 @@ function show_removed_reviews()
             // Connessione al database
             $db = db_connection();
 
-            $result = $db->query("SELECT username, title FROM reviews");
+            $query = $db->query("SELECT username, title FROM reviews");
             // Imposta l'intestazione della risposta che indica che i dati restituiti sono nel formato JSON
             header("Content-type: application/json");
             // Codifica e stampa i risultati della query in formato JSON
-            echo json_encode($result->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
+            echo json_encode($query->fetchAll()); // Uso "fetchAll()" per recuperare i risultati di una query
         } catch (PDOException $ex) {
+            // Errore di connessione con il database
             header("Location: login.php");
         }
     } else {
+        // Utente non autorizzato
         header("Location: login.php");
     }
 }

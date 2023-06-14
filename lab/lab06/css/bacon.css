@@ -1,0 +1,51 @@
+/**
+* Laboratorio di Tecnologie WEB - Esercitazione 06
+* Nome e Cognome: Alberto Marino
+* Matricola: 948258
+* Esercizio: Esercitazione 06
+*/
+
+#main {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#searchall, #searchkevin {
+    width: 24em;
+    margin: auto;
+}
+
+body {
+    margin: auto;
+    font-family: "Verdana", sans-serif;
+    background-color: #dad9d4;
+}
+
+#frame {
+    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+}
+
+#banner, #w3c {
+    background-image: url("../img/banner-background.png");
+    color: white;
+    padding: 10px;
+}
+
+#w3c {
+    margin-bottom: 2em;
+}
+
+table {
+    margin: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+    border: 1px solid #dad9d4;
+    width: 80%;
+}
+
+/*Il selettore :nth-child(n) corrisponde a ogni elemento che è l'ennesimo figlio del suo genitore.*/
+body tr:nth-child(odd) { /*odd: Rappresenta elementi la cui posizione numerica in una serie di fratelli è dispari: 1, 3, 5, ecc...*/
+    background-color: #dad9d4;
+}

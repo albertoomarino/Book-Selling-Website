@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione della sezione "Books"
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();

@@ -1,0 +1,40 @@
+/**
+ * Laboratorio di Tecnologie WEB - Esercitazione 05
+ * Nome e Cognome: Alberto Marino
+ * Matricola: 948258
+ * Esercizio: Esercitazione 05
+ */
+
+body, #shufflebutton {
+    font-family: "Comic Sans MS", serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 14pt;
+}
+
+#puzzlearea {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#puzzlearea div {
+    background-image: url("picture.jpg");
+    border: 5px solid black;
+    width: 90px;
+    height: 90px;
+    font-size: 40pt;
+    display: inline-block;
+    float: left;
+}
+
+#empty {
+    background-image: url("") !important;
+}
+
+.b:hover {
+    border: 5px solid red !important;
+    color: red;
+}

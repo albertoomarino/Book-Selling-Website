@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di richiamo di tutte le funzioni php
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
@@ -9,8 +18,8 @@ if (!isset($_SESSION)) {
  * tramite una richiesta POST
  *
  * Codice per la gestione delle richieste POST provenienti dalla pagina web
- * In base al valore di $_POST["to_do"], vengono inclusi file PHP specifici che contengono
- * le funzioni associate a ciascuna azione
+ * In base al valore di $_POST["to_do"], vengono richiamate funzioni PHP specifiche
+ * presenti nel file "functions_implementation.php"
  */
 if (isset($_POST["to_do"])) {
     include "functions_implementation.php";
@@ -30,8 +39,8 @@ if (isset($_POST["to_do"])) {
         case "upload_book":
             upload_book();
             break;
-        case "show_removed_book":
-            show_removed_book();
+        case "show_select_titles":
+            show_select_titles();
             break;
         case "remove_book":
             remove_book();

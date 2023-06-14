@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione della pagina di login
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
@@ -13,9 +22,10 @@ if (!isset($_SESSION)) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap">
     <link rel="stylesheet" href="../css/access.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../js/functions.js" type="text/javascript"></script>
+    <script src="../javascript/functions.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <title>getBook()</title>
 </head>
@@ -38,7 +48,7 @@ if (!isset($_SESSION)) {
         }
         ?>
 
-        <!-- Form per l'username -->
+        <!-- Campo per l'inserimento dell'username -->
         <div class="input_box">
             <input type="text" id="username"
                    name="username" pattern="[a-z]{4,16}"
@@ -49,7 +59,7 @@ if (!isset($_SESSION)) {
                    required>
         </div>
 
-        <!-- Form per la password -->
+        <!-- Campo per l'inserimento della password -->
         <div class="input_box">
             <input type="password"
                    id="password"
@@ -66,7 +76,7 @@ if (!isset($_SESSION)) {
             <input type="checkbox" onclick="show_hide_psw()">Show password
         </div>
 
-        <!-- Bottone "login" -->
+        <!-- Bottone per effettuare il login -->
         <button type="submit" class="button">Login</button>
 
         <!-- Link alla pagina di registrazione -->

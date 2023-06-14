@@ -1,0 +1,67 @@
+body {
+    font-family: Georgia, Garamond;
+    letter-spacing: 0.25em;
+    background-image: url("https://us.123rf.com/450wm/yamabikay/yamabikay1609/yamabikay160900196/63661432-trama-del-libro-bianco-o-sfondo-per-il-design-texture-di-alta-qualit%C3%A0-ad-altissima-risoluzione-.jpg");
+}
+h1 {
+    color: #d04764;
+    font-size: 36px;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial;
+    line-height: 48px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+h2 {
+    color: crimson;
+    font-size: 24px;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial;
+    line-height: 32px;
+    text-align: center;
+}
+p {
+    color: #333;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    line-height: 28px;
+}
+.Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.Position {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+dt {
+    margin: 10px;
+}
+ul {
+    list-style-image: url("elenco-puntato.png");
+}
+#index1 {
+    text-align: center;
+    font-size: 25px;
+}
+#index2 {
+    text-align: center;
+    font-size: 25px;
+}
+#index3 {
+    text-align: center;
+    font-size: 25px;
+}
+#index4 {
+    text-align: center;
+    font-size: 25px;
+}
+#ID1 {
+    text-align: center;
+}

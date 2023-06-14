@@ -1,0 +1,135 @@
+/*
+ * Laboratorio di Tecnologie WEB - Esercitazione 03
+ * Nome e Cognome: Alberto Marino
+ * Matricola: 948258
+ * Esercizio: Esercitazione 03
+ */
+
+body {
+    background-image: url("https://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/background.png");
+    font-family: Verdana;
+    font-size: 8pt;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+dt {
+    margin-top: 10pt;
+}
+
+h1 {
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 24pt;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+
+q {
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+ul{
+    list-style-type: none;
+    padding-left:0;
+}
+
+.SmallRectangle {
+    border: 2px solid grey;
+    border-radius: 10px;
+    background-color: #E8DC9B;
+    padding: 8px 8px 8px 8px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.imgSmallRectangle {
+    float: left;
+    padding: 0 5px 0 0;
+}
+
+.Profile {
+    float: left;
+    padding: 0 5px 0 0;
+}
+
+.VerticalSpaceProfile {
+    margin-bottom: 20pt;
+}
+
+.ThirtyThree {
+    vertical-align: top;
+}
+
+#Banner {
+    background-image: url("https://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/bannerbg.png");
+    background-repeat: repeat-x;
+    text-align: center;
+    height: 50px;
+}
+
+#Heading {
+    background-image: url("https://courses.cs.washington.edu/courses/cse190m/11sp/homework/2/rbg.png");
+    background-repeat: repeat-x;
+    height: 83px;
+    color: red;
+    font-weight: bold;
+    font-size: 48pt;
+    vertical-align: bottom;
+}
+
+#WithoutValidators {
+    width: 800px;
+    margin: auto;
+    border: 4px solid grey;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#Left {
+    float: left;
+    width: 550px;
+}
+
+#Right {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+    font-family: Arial;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+#TextRightSide {
+    padding: 0 10pt 0 10pt;
+}
+
+#CentreLeft {
+    float: left;
+    width: 47%;
+    margin: 0 0 0 2%;
+}
+
+#CentreRight {
+    float: right;
+    width: 47%;
+    margin: 0 2% 0 0;
+}
+
+#Footer {
+    padding: 0 0 5px 0;
+    text-align: center;
+    clear: right;
+    background-color: #A2B964;
+    margin: 0;
+    vertical-align: center;
+}
+
+#Validators {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.5;
+}

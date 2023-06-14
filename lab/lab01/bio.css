@@ -1,0 +1,45 @@
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 22pt;
+    font-weight: bold;
+    color: #a4a400;
+    background-color: #f0f0f0;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial;
+    letter-spacing: 0.25em;
+}
+h2 {
+    width: fit-content;
+    text-align: left;
+    text-decoration: underline;
+    font-size: 18pt;
+    color: #a4a400;
+    background-color: #f0f0f0;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial;
+}
+body {
+    font-size: 11pt;
+    color: #404040;
+    background-color: white;
+    font-family: Georgia, Garamond;
+    background-image: url("https://static.vecteezy.com/ti/vettori-gratis/t2/626167-geometrico-astratto-sfondo-grigio-per-modelli-di-bussines-sfondi-sito-web-vettoriale.jpg");
+    background-attachment: fixed;
+    background-repeat: round;
+    letter-spacing: 0.25em;
+    width: 1024px;
+}
+href {
+    color: #a4a400;
+}
+.Profile {
+    float: right;
+}
+#Container {
+    overflow: hidden;
+}
+ul {
+    list-style-image: url("elenco-puntato.png");
+}

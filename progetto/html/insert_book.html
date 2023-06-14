@@ -1,4 +1,10 @@
-<!-- Codice relativo alla sezione per l'inserimento di un prodotto da parte dell'ADMIN -->
+<!--
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice relativo alla sezione per l'inserimento di un prodotto da parte dell'ADMIN
+-->
 
 <section class="insert_book">
     <form id="insert_book_form">
@@ -9,12 +15,12 @@
                 Enter the <span>title</span> of the book:
             </p>
 
-            <!-- Form per il titolo del libro -->
+            <!-- Campo per l'inserimento del titolo del libro -->
             <div class="input_box">
                 <input type="text"
                        id="title"
                        name="title"
-                       pattern="^(?!.*\s)\w[\w\u00C0-\u017F,.']{0,59}$"
+                       pattern="^(?!.*\s\s)\p{L}[\p{L}\s]{0,58}\p{L}$"
                        title="Respect the format! Use only alphanumeric characters, numbers, and spaces up to 60 characters"
                        maxlength="60"
                        placeholder="ex. Un gran voglia di vivere"
@@ -25,12 +31,12 @@
                 Enter the <span>author(s)</span> of the new book:
             </p>
 
-            <!-- Form per l'autore del libro -->
+            <!-- Campo per l'inserimento dell'autore del libro -->
             <div class="input_box">
                 <input type="text"
                        id="author"
                        name="author"
-                       pattern="^(?!.*\s)[A-Za-z]+(?:\s*[A-Za-z]+)*(?:,\s*[A-Za-z]+(?:\s*[A-Za-z]+)*)*$"
+                       pattern="^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ, ]{0,58}$"
                        title="Respect the format! Use letters only and divide authors with a comma followed by a space for up to 60 characters"
                        maxlength="60"
                        placeholder="ex. Fabio Volo"
@@ -41,7 +47,7 @@
                 Enter the <span>price</span> of the book:
             </p>
 
-            <!-- Form per il prezzo del libro -->
+            <!-- Campo per l'inserimento del prezzo del libro -->
             <div class="input_box">
                 <input type="text"
                        id="price"
@@ -57,12 +63,12 @@
                 Enter the <span>publisher</span> of the book:
             </p>
 
-            <!-- Form per l'editore del libro -->
+            <!-- Campo per l'inserimento dell'editore del libro -->
             <div class="input_box">
                 <input type="text"
                        id="publisher"
                        name="publisher"
-                       pattern="^(?!.*\s)[\w&]+(?:\s*[\w&]+)*$"
+                       pattern="^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ ]{0,58}$"
                        title="Respect the format! Use only letters (lowercase or uppercase) for up to 60 characters"
                        maxlength="60"
                        placeholder="ex. Mondadori"
@@ -73,7 +79,7 @@
                 Enter the <span>plot</span> of the book:
             </p>
 
-            <!-- Form per la trama del libro -->
+            <!-- Campo per l'inserimento della trama del libro -->
             <div class="input_box">
                 <textarea id="plot"
                           name="plot"
@@ -83,7 +89,7 @@
                           required="required"></textarea>
             </div>
 
-            <!-- Bottone per l'aggiunta di un prodotto sulla piattaforma -->
+            <!-- Bottone per aggiungere un prodotto sulla piattaforma -->
             <div class="new_book_input_price">
                 <button type="submit" class="form_btn">Add this new book</button>
             </div>

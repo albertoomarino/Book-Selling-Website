@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione della pagina di subscribe
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
@@ -13,9 +22,10 @@ if (!isset($_SESSION)) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap">
     <link rel="stylesheet" href="../css/access.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../js/functions.js" type="text/javascript"></script>
+    <script src="../javascript/functions.js" type="text/javascript"></script>
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <title>getBook()</title>
 </head>
@@ -38,7 +48,7 @@ if (!isset($_SESSION)) {
         }
         ?>
 
-        <!-- Form per il nome -->
+        <!-- Campo per l'inserimento del nome -->
         <div class="input_box">
             <input type="text"
                    id="name"
@@ -50,7 +60,7 @@ if (!isset($_SESSION)) {
                    required="required">
         </div>
 
-        <!-- Form per il cognome -->
+        <!-- Campo per l'inserimento del cognome -->
         <div class="input_box">
             <input type="text"
                    id="surname"
@@ -62,7 +72,7 @@ if (!isset($_SESSION)) {
                    required="required">
         </div>
 
-        <!-- Form per l'username -->
+        <!-- Campo per l'inserimento dell'username -->
         <div class="input_box">
             <input type="text"
                    id="username"
@@ -75,7 +85,7 @@ if (!isset($_SESSION)) {
                    required="required">
         </div>
 
-        <!-- Form per la email -->
+        <!-- Campo per l'inserimento della email -->
         <div class="input_box">
             <input type="email"
                    id="email"
@@ -86,7 +96,7 @@ if (!isset($_SESSION)) {
                    required="required">
         </div>
 
-        <!-- Form per la password -->
+        <!-- Campo per l'inserimento della password -->
         <div class="input_box">
             <input type="password"
                    id="password"

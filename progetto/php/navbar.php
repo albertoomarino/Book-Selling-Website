@@ -1,4 +1,13 @@
 <?php
+
+/*
+Progetto di Tecnologie Web - A.A. 2022/2023
+Università degli Studi di Torino
+Alberto Marino - matr. 948258
+--
+Codice di implementazione della pagina della navbar
+*/
+
 // Se non è presente una sessione, viene creata
 if (!isset($_SESSION)) {
     session_start();
@@ -24,6 +33,6 @@ if (!isset($_SESSION)) {
         </a>
     </nav>
 
-    <!-- Pulsante di logout -->
+    <!-- Bottone di logout -->
     <a href="logout.php" title="Return to login page">Logout <i class="fa fa-sign-out"></i></a>
 </header>
