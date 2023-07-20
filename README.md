@@ -10,13 +10,9 @@ Saranno considerati ammissibili anche strumenti che non abbiamo avuto modo di es
 
 - [Introduzione](#introduzione)
 - [Caratteristiche](#caratteristiche)
-- [Prerequisiti](#prerequisiti)
 - [Installazione](#installazione)
 - [Utilizzo](#utilizzo)
-- [Contributi](#contributi)
 - [Licenza](#licenza)
-- [Contatti](#contatti)
-- [Ringraziamenti](#ringraziamenti)
 
 ## Introduzione
 
