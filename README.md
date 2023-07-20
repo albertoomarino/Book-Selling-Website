@@ -38,30 +38,38 @@ Dopo aver effettuato la registrazione al sito piuttosto che il login, è possibi
 
 ## Licenza
 
-TWeb - Alberto Marino
+### TWeb - Alberto Marino
 
 Copyright (c) [2023] [Alberto Marino]
 
 Tutti i diritti riservati. Questo software è protetto dalle leggi sul copyright e dagli accordi internazionali di licenza.
 
+### Contratto di Licenza
+
 Questo Contratto di Licenza (il "Contratto") è stipulato tra l'Autore o il Titolare dei Diritti (di seguito denominato "Concedente") e qualsiasi individuo o entità giuridica (di seguito denominato "Concessionario") intenzionato a utilizzare il software denominato [Web-Technologies] (di seguito denominato "Software").
 
 1. CONCESSIONE DI LICENZA
-   Il Concedente concede al Concessionario il diritto non esclusivo, non trasferibile e revocabile di utilizzare il Software in conformità con i termini e le condizioni di questo Contratto.
+
+Il Concedente concede al Concessionario il diritto non esclusivo, non trasferibile e revocabile di utilizzare il Software in conformità con i termini e le condizioni di questo Contratto.
 
 2. LIMITAZIONI
-   Il Concessionario non può:
-   a) Copiare, distribuire o divulgare il Software o sue parti a terzi, sia gratuitamente che per qualsiasi forma di compensazione.
-   b) Modificare, adattare, eseguire operazioni di reverse engineering, decompilare o disassemblare il Software o sue parti.
-   c) Rimuovere o alterare qualsiasi avviso di copyright, legenda proprietaria o altri simboli di identificazione presenti nel Software.
+
+Il Concessionario non può:
+
+a) Copiare, distribuire o divulgare il Software o sue parti a terzi, sia gratuitamente che per qualsiasi forma di compensazione.
+b) Modificare, adattare, eseguire operazioni di reverse engineering, decompilare o disassemblare il Software o sue parti.
+c) Rimuovere o alterare qualsiasi avviso di copyright, legenda proprietaria o altri simboli di identificazione presenti nel Software.
 
 3. MANCANZA DI GARANZIA
-   IL SOFTWARE VIENE FORNITO "COSÌ COM'È" E SENZA ALCUNA GARANZIA, ESPRESSA O IMPLICITA. IL CONCEDENTE DECLINA OGNI GARANZIA, INCLUSE, MA NON SOLO, LE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ PER UN PARTICOLARE SCOPO E NON VIOLAZIONE. IL CONCEDENTE NON SARÀ RESPONSABILE PER QUALSIASI DANNO DERIVANTE DALL'USO DEL SOFTWARE.
+
+IL SOFTWARE VIENE FORNITO "COSÌ COM'È" E SENZA ALCUNA GARANZIA, ESPRESSA O IMPLICITA. IL CONCEDENTE DECLINA OGNI GARANZIA, INCLUSE, MA NON SOLO, LE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ PER UN PARTICOLARE SCOPO E NON VIOLAZIONE. IL CONCEDENTE NON SARÀ RESPONSABILE PER QUALSIASI DANNO DERIVANTE DALL'USO DEL SOFTWARE.
 
 4. RECESSO
-   Questo Contratto rimarrà in vigore fino a quando sarà terminato da una delle parti. Il Concedente può terminare questo Contratto in qualsiasi momento nel caso in cui il Concessionario violi una qualsiasi delle condizioni qui stabilite. Al momento del recesso, il Concessionario dovrà cessare ogni utilizzo del Software e distruggere tutte le copie in suo possesso.
+
+Questo Contratto rimarrà in vigore fino a quando sarà terminato da una delle parti. Il Concedente può terminare questo Contratto in qualsiasi momento nel caso in cui il Concessionario violi una qualsiasi delle condizioni qui stabilite. Al momento del recesso, il Concessionario dovrà cessare ogni utilizzo del Software e distruggere tutte le copie in suo possesso.
 
 5. LEGGE APPLICABILE
-   Questo Contratto sarà regolato e interpretato in conformità con le leggi di [Giurisdizione]. Eventuali controversie derivanti da questo Contratto saranno sottoposte alla giurisdizione esclusiva dei tribunali di [Giurisdizione].
+
+Questo Contratto sarà regolato e interpretato in conformità con le leggi di [Giurisdizione]. Eventuali controversie derivanti da questo Contratto saranno sottoposte alla giurisdizione esclusiva dei tribunali di [Giurisdizione].
 
 Utilizzando il Software, il Concessionario accetta di essere vincolato dai termini e dalle condizioni di questo Contratto.
