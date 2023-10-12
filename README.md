@@ -1,40 +1,40 @@
 # TWeb - Tecnologie Web
 
-Il tema del sito è libero e scelto dallo studente. Tuttavia, il sito deve essere strutturato in modo da seguire le specifiche indicate. Una parte importante della realizzazione del sito è la relazione di accompagnamento che descrive tecnicamente il modo in cui sono state implementate le varie funzioni, la struttura del back end, la struttura del front end e il modo in cui è stata gestita la comunicazione tra i vari livelli dell'architettura.
+The theme of the site is free and chosen by the student. However, the site must be structured in such a way as to follow the given specifications. An important part of the realisation of the site is the accompanying report that technically describes how the various functions were implemented, the structure of the back end, the structure of the front end and how communication between the various levels of the architecture was handled.
 
-Lo studente sarà in grado di utilizzare tutte le tecnologie viste durante il corso: HTML(5), CSS(3), PHP5 (connessione web, web service), JavaScript (JS Events, DOM), librerie JS (Ajax, scambio dati (XML o JSON), web service, ecc. I problemi che sono stati analizzati e per i quali sono state discusse le soluzioni (presentazione/contenuto/comportamento della separazione, sicurezza web, ecc.) dovranno essere affrontati: l'obiettivo del lavoro finale è quello di permettere la connessione di tutti gli argomenti trattati con lo scopo di creare un sito web professionale.
+The student will be able to use all the technologies seen during the course: HTML(5), CSS(3), PHP5 (web connection, web service), JavaScript (JS Events, DOM), JS libraries (Ajax, data exchange (XML or JSON), web service, etc.), and the use of the following technologies. The problems that have been analysed and for which solutions have been discussed (presentation/content/separation behaviour, web security, etc.) will have to be addressed: the aim of the final work is to enable the connection of all the topics covered with the aim of creating a professional website.
 
-Saranno considerati ammissibili anche strumenti che non abbiamo avuto modo di esplorare durante il corso, come: Bootstrap, PHP Object Oriented, PHP 7.4, pattern MVC, Angular.js, ecc. Va tuttavia considerato che queste tecnologie saranno valutate solo come **facoltative** e non obbligatorie e **complementari** all'uso delle tecnologie di base, che si deve comunque dimostrare di saper padroneggiare anche senza ricorrere a framework più o meno avanzati.
+Tools that we did not have the opportunity to explore during the course, such as: Bootstrap, PHP Object Oriented, PHP 7.4, MVC pattern, Angular.js, etc. However, it must be considered that these technologies will only be assessed as **optional** and not compulsory and **complementary** to the use of the basic technologies, which one must in any case demonstrate the ability to master even without using more or less advanced frameworks.
 
 ## Tabella dei contenuti
 
-- [Introduzione](#introduzione)
-- [Caratteristiche](#caratteristiche)
-- [Installazione](#installazione)
-- [Utilizzo](#utilizzo)
-- [Licenza](#licenza)
+- [Introduction](#introduction)
+- [Characteristics](#characteristics)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Licence](#licence)
 
-## Introduzione
+## Introduction
 
-Il progetto di Tecnologie Web è stato utile per imparare ad utilizzare le basi dello sviluppo web. Come riportato precedentemente, sono stati utlizzati diversi linguaggi di programmazione e markup utili a prendere conoscenza sul modo di lavorare in ambito di rete.
+The Web Technologies project was useful for learning the basics of web development. As mentioned above, different programming languages and markup were used to gain knowledge of how to work in the network environment.
 
-## Caratteristiche
+## Characteristics
 
-Il repository è composto da due cartelle:
-- Cartella **lab**: contiene sei esercitazioni di laboratorio con le varie consegne ed implementazioni;
-- Cartella **progetto**: contiene il codice del vero e proprio sito web, i requisiti forniti dal professore e la relazione che descrive in modo completo l'intero progetto.
+The repository consists of two folders:
+- Folder **lab**: contains six laboratory exercises with the various deliverables and implementations;
+- Folder **project**: contains the code of the actual website, the requirements provided by the professor and the report describing the entire project in full.
 
-## Installazione
+## Installation
 
-Per l'installazione del seguente progetto occorre aver installato sulla propria macchina un'applicazione software che fornisce un ambiente di sviluppo locale per la creazione e il test di siti web e applicazioni web (io ho utilizzato **XAMPP**).
+To install the following project, you must have installed a software application on your machine that provides a local development environment for creating and testing websites and web applications (I used **XAMPP**).
 
-Per clonare il repository in locale è sufficiente lanciare nella propria *Git Bash* il comando `git clone https://github.com/albertoomarino/TWeb.git`
+To clone the repository locally, simply run in your *Git Bash* the command `git clone https://github.com/albertoomarino/TWeb.git`
 
-## Utilizzo
+## Usage
 
-Una volta installato il progetto e lanciato, è necessario creare un database chiamato `getbook`. A questo punto, dall'interfaccia web di XAMPP è possibile importare il database completo presente nel file `getbook.sql` nella cartella `database`.
+Once you have installed the project and launched it, you need to create a database called `getbook`. At this point, from the XAMPP web interface you can import the complete database in the `getbook.sql` file into the `database` folder.
 
-Dopo aver effettuato la registrazione al sito piuttosto che il login, è possibile navigare all'interno dell piattaforma per visualizzare tutte le funzioni implementate. Per maggiori dettagli sulla navigazione e sull'implementazione, fare riferimento alla relazione `Relazione.pdf`.
+After registering to the site rather than logging in, it is possible to navigate within the platform to view all implemented functions. For more details on navigation and implementation, please refer to the `Report.pdf`.
 
 ## Licenza
 
@@ -42,34 +42,35 @@ Dopo aver effettuato la registrazione al sito piuttosto che il login, è possibi
 
 Copyright (c) [2023] [Alberto Marino]
 
-Tutti i diritti riservati. Questo software è protetto dalle leggi sul copyright e dagli accordi internazionali di licenza.
+All rights reserved. This software is protected by copyright laws and international licence agreements.
 
-### Contratto di Licenza
+### Licence
 
-Questo Contratto di Licenza (il "Contratto") è stipulato tra l'Autore o il Titolare dei Diritti (di seguito denominato "Concedente") e qualsiasi individuo o entità giuridica (di seguito denominato "Concessionario") intenzionato a utilizzare il software denominato [Web-Technologies] (di seguito denominato "Software").
+This Licence Agreement (the "Agreement") is entered into between the Author or the Right Holder (hereinafter referred to as the "Licensor") and any individual or legal entity (hereinafter referred to as the "Licensee") intending to use the software called [Web-Technologies] (hereinafter referred to as the "Software").
 
-1. CONCESSIONE DI LICENZA
+1. GRANT OF LICENCE
 
-Il Concedente concede al Concessionario il diritto non esclusivo, non trasferibile e revocabile di utilizzare il Software in conformità con i termini e le condizioni di questo Contratto.
+Licensor grants Licensee the non-exclusive, non-transferable, revocable right to use the Software in accordance with the terms and conditions of this Agreement.
 
-2. LIMITAZIONI
+2. LIMITATIONS .
 
-Il Concessionario non può:
+Licensee may not:
 
-a) Copiare, distribuire o divulgare il Software o sue parti a terzi, sia gratuitamente che per qualsiasi forma di compensazione.
-b) Modificare, adattare, eseguire operazioni di reverse engineering, decompilare o disassemblare il Software o sue parti.
-c) Rimuovere o alterare qualsiasi avviso di copyright, legenda proprietaria o altri simboli di identificazione presenti nel Software.
+a) Copy, distribute or disclose the Software or any part thereof to any third party, whether free of charge or for any form of compensation.
+b) Modify, adapt, reverse engineer, decompile or disassemble the Software or parts thereof.
+c) Remove or alter any copyright notices, proprietary legends or other identifying symbols in the Software.
 
-3. MANCANZA DI GARANZIA
+3. LACK OF WARRANTY
 
-IL SOFTWARE VIENE FORNITO "COSÌ COM'È" E SENZA ALCUNA GARANZIA, ESPRESSA O IMPLICITA. IL CONCEDENTE DECLINA OGNI GARANZIA, INCLUSE, MA NON SOLO, LE GARANZIE DI COMMERCIABILITÀ, IDONEITÀ PER UN PARTICOLARE SCOPO E NON VIOLAZIONE. IL CONCEDENTE NON SARÀ RESPONSABILE PER QUALSIASI DANNO DERIVANTE DALL'USO DEL SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED. LICENSOR DISCLAIMS ALL WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. THE LICENSOR SHALL NOT BE LIABLE FOR ANY DAMAGES ARISING OUT OF THE USE OF THE SOFTWARE.
 
-4. RECESSO
+4. TERMINATION
 
-Questo Contratto rimarrà in vigore fino a quando sarà terminato da una delle parti. Il Concedente può terminare questo Contratto in qualsiasi momento nel caso in cui il Concessionario violi una qualsiasi delle condizioni qui stabilite. Al momento del recesso, il Concessionario dovrà cessare ogni utilizzo del Software e distruggere tutte le copie in suo possesso.
+This Agreement shall remain in force until terminated by either party. The Licensor may terminate this Agreement at any time if the Licensee breaches any of the terms set forth herein. Upon termination, Licensee shall cease all use of the Software and destroy all copies in its possession.
 
-5. LEGGE APPLICABILE
 
-Questo Contratto sarà regolato e interpretato in conformità con le leggi di [Giurisdizione]. Eventuali controversie derivanti da questo Contratto saranno sottoposte alla giurisdizione esclusiva dei tribunali di [Giurisdizione].
+5. APPLICABLE LAW
 
-Utilizzando il Software, il Concessionario accetta di essere vincolato dai termini e dalle condizioni di questo Contratto.
+This Agreement shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising out of this Agreement shall be submitted to the exclusive jurisdiction of the courts of [Jurisdiction].
+
+By using the Software, Licensee agrees to be bound by the terms and conditions of this Agreement.
