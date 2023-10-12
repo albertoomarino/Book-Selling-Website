@@ -38,8 +38,6 @@ After registering to the site rather than logging in, it is possible to navigate
 
 ## License
 
-### TWeb - Alberto Marino
-
 Copyright (c) [2023] [Alberto Marino]
 
 All rights reserved. This software is protected by copyright laws and international license agreements.
@@ -68,7 +66,7 @@ THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND, EITHER EXPRES
 
 This Agreement shall remain in force until terminated by either party. The Licensor may terminate this Agreement at any time if the Licensee breaches any of the terms set forth herein. Upon termination, Licensee shall cease all use of the Software and destroy all copies in its possession.
 
-## 5. APPLICABLE LAW
+#### 5. APPLICABLE LAW
 
 This Agreement shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising out of this Agreement shall be submitted to the exclusive jurisdiction of the courts of [Jurisdiction].
 
