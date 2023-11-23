@@ -1,4 +1,4 @@
-# Web Technologies
+# Web technologies
 
 ## Table of Contents
 
